@@ -1,0 +1,108 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+
+
+model User {
+  id      Int     @id @default(autoincrement())
+  totalTime   String?
+  createdAt   String?
+  firstName   String?
+  lastName   String?
+  score   String?
+  totalClick   Int?
+  totalSkip    Int?
+  picture  Picture[]
+}
+
+model Picture {
+  id      Int     @id @default(autoincrement()) 
+  userId   Int
+  skipCounts  Json?
+  timeCounts  Json?
+  clickCounts Json?
+  scoreCounts Json?
+
+
+  user    User @relation(fields: [userId],references: [id])
+}
+
+
+  // picTime1    Int?
+  // picTime2    Int?
+  // picTime3    Int?
+  // picTime4    Int?
+  // picTime5    Int?
+  // picTime6    Int?
+  // picTime7    Int?
+  // picTime8    Int?
+  // picTime9    Int?
+  // picTime10    Int?
+
+  // picTime11    Int?
+  // picTime12    Int?
+  // picTime13    Int?
+  // picTime14    Int?
+  // picTime15    Int?
+  // picTime16    Int?
+  // picTime17    Int?
+  // picTime18    Int?
+  // picTime19    Int?
+  // picTime20    Int?
+
+  // picTime21    Int?
+  // picTime22    Int?
+  // picTime23    Int?
+  // picTime24    Int?
+  // picTime25    Int?
+  // picTime26    Int?
+  // picTime27    Int?
+  // picTime28    Int?
+  // picTime29    Int?
+  // picTime30    Int?
+
+
+  // clickCount1 Int?  // to count how many clicks user clicked for each picture
+  // clickCount2 Int?
+  // clickCount3 Int?
+  // clickCount4 Int?
+  // clickCount5 Int?
+  // clickCount6 Int?
+  // clickCount7 Int?
+  // clickCount8 Int?
+  // clickCount9 Int?
+  // clickCount10 Int?
+
+  // clickCount11 Int?
+  // clickCount12 Int?
+  // clickCount13 Int?
+  // clickCount14 Int?
+  // clickCount15 Int?
+  // clickCount16 Int?
+  // clickCount17 Int?
+  // clickCount18 Int?
+  // clickCount19 Int?
+  // clickCount20 Int?
+
+  // clickCount21 Int?
+  // clickCount22 Int?
+  // clickCount23 Int?
+  // clickCount24 Int?
+  // clickCount25 Int?
+  // clickCount26 Int?
+  // clickCount27 Int?
+  // clickCount28 Int?
+  // clickCount29 Int?
+  // clickCount30 Int?
